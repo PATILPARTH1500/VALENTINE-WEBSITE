@@ -1,0 +1,217 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f9e3e3;
+  font-family: 'Arial', sans-serif;
+  flex-direction: column;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Container styling */
+.container {
+  text-align: center;
+}
+
+/* Heading with heartbeat animation */
+h1 {
+  font-size: 2.5em;
+  color: #d32f2f;
+  animation: heartbeat 1.5s infinite;
+}
+
+/* Buttons styling */
+.buttons {
+  margin-top: 20px;
+}
+
+button {
+  font-size: 1.5em;
+  padding: 12px 25px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Yes Button */
+.yes-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.yes-button:hover {
+  background-color: #388e3c;
+  transform: scale(1.1);
+}
+
+/* No Button */
+.no-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.no-button:hover {
+  background-color: #d32f2f;
+  transform: scale(1.1);
+}
+
+/* GIF Container */
+.gif_container img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 20px;
+  animation: float 3s infinite ease-in-out;
+}
+
+/* Keyframes for animations */
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Heartbeat animation for the heading */
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Floating animation for GIF */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+
+/* General Styles */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f9e3e3;
+  font-family: 'Arial', sans-serif;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Floating Hearts Background */
+.hearts-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Create multiple floating hearts */
+@keyframes float-hearts {
+  0% { transform: translateY(100vh) scale(0.5); opacity: 1; }
+  100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+}
+
+.heart {
+  position: absolute;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  clip-path: polygon(50% 0%, 100% 35%, 80% 100%, 50% 80%, 20% 100%, 0% 35%);
+  animation: float-hearts 5s linear infinite;
+}
+
+/* Centered Content */
+.container {
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Heading Animation */
+h1 {
+  font-size: 2.5em;
+  color: #d32f2f;
+  animation: heartbeat 1.5s infinite alternate;
+}
+
+/* Buttons */
+.buttons {
+  margin-top: 20px;
+}
+
+button {
+  font-size: 1.5em;
+  padding: 12px 25px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Yes Button */
+.yes-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.yes-button:hover {
+  background-color: #388e3c;
+  transform: scale(1.1);
+}
+
+/* No Button Moves Away */
+.no-button {
+  background-color: #f44336;
+  color: white;
+  position: relative;
+}
+
+.no-button:hover {
+  transform: translateX(calc(-50px + 100px * random()));
+}
+
+/* GIF Styling */
+.gif_container img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 20px;
+  animation: float 3s infinite ease-in-out;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
